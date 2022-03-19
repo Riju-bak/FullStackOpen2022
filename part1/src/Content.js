@@ -1,12 +1,12 @@
 import Part from './Part';
 
 const Content = (props) => {
-    let pl = props.l;
+    let parts = props.parts;
     return (
         <div>
-            <Part pr={pl[0]}/>
-            <Part pr={pl[1]}/>
-            <Part pr={pl[2]}/>
+            <Part part={parts[0]}/>
+            <Part part={parts[1]}/>
+            <Part part={parts[2]}/>
         </div>
     )
 };
