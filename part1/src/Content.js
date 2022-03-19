@@ -1,7 +1,7 @@
 import Part from './Part';
 
 const Content = (props) => {
-    let parts = props.parts;
+    let parts = props.course.parts;
     return (
         <div>
             <Part part={parts[0]}/>
