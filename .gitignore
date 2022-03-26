@@ -24,6 +24,7 @@ yarn-error.log*
 
 # Directories not to be submitted
 part1_prac/
+part1_prac1c/
 
 #IDE Stuff
 .idea/
