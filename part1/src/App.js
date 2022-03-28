@@ -15,6 +15,7 @@ const App = () => {
 
     const [selected, setSelected] = useState(0);
     const [votes, setVotes] = useState(new Uint8Array(anecdotes.length));
+    const [mostVoted, setMostVoted] = useState(0);
 
     const getRandomInt = (max) => {
         // Returns random integer from 0 to max(inclusive of 0, but not max)
@@ -30,6 +31,8 @@ const App = () => {
         let points = [...votes];
         points[selected]++;
         setVotes(points);
+        const maxPoints = Math.max(...points);
+        setMostVoted(points.indexOf(maxPoints));
     };
 
     return (
@@ -37,6 +40,7 @@ const App = () => {
             <Anecdote heading={"Anecdote of the day"} text={anecdotes[selected]} votes={votes[selected]}/>
             <Button onClick={handleVotes} text={"votes"}/>
             <Button onClick={handleNextAnecdote} text={"next anecdote"}/>
+            <Anecdote heading={"Anecdote with most votes"} text={anecdotes[mostVoted]} votes={votes[mostVoted]}/>
         </div>
     )
 }
